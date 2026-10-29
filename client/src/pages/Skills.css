@@ -1,0 +1,154 @@
+.skills-page {
+  min-height: 80vh;
+  padding: clamp(52px, 8vw, 88px) 24px;
+  background:
+    radial-gradient(ellipse at 92% 10%, rgb(217 244 223 / 70%), transparent 34rem),
+    var(--color-page);
+  color: var(--color-ink);
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.skills-heading {
+  max-width: 680px;
+  margin: 0 0 40px;
+}
+
+.skills-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--color-green-dark);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.19em;
+}
+
+.skills-subtitle::before {
+  width: 24px;
+  height: 2px;
+  background: var(--color-orange);
+  content: "";
+}
+
+.skills-heading h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.skills-heading h1 span {
+  color: var(--color-green);
+}
+
+.skills-description {
+  max-width: 590px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.skill-card {
+  padding: 23px;
+  border: 1px solid var(--color-border);
+  border-radius: 17px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: #a4d8b2;
+  box-shadow: 0 18px 34px rgb(25 74 42 / 11%);
+}
+
+.skill-card h2 {
+  margin: 0 0 18px;
+  color: var(--color-ink);
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.skill-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 9px;
+  border: 1px solid #e3eee5;
+  border-radius: 9px;
+  background: #f7fbf7;
+  color: #435449;
+  font-size: 0.84rem;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.skill-item:hover {
+  border-color: #b7dfc1;
+  background: var(--color-mint-light);
+  color: var(--color-green-dark);
+}
+
+.skill-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-green);
+}
+
+.skill-item span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-page {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card {
+    transition: none;
+  }
+
+  .skill-card:hover {
+    transform: none;
+  }
+}

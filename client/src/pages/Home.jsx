@@ -8,7 +8,9 @@ function Home() {
       <div className="home-content">
         <p className="intro">HELLO, I'M</p>
 
-        <h1>Sampada Kaginkar</h1>
+        <h1>
+          Sampada <span>Kaginkar</span>
+        </h1>
 
         <h2>
           Computer Engineering Student | Aspiring Software Developer
@@ -40,7 +42,7 @@ function Home() {
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/sampada-kaginkar/"
             target="_blank"
             rel="noreferrer"
           >
@@ -51,7 +53,7 @@ function Home() {
 
       <div className="home-image">
         <img
-          src="/profile.png"
+          src="/Profile.png"
           alt="Sampada Kaginkar"
         />
       </div>
