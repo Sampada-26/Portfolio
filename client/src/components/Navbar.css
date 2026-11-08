@@ -15,8 +15,8 @@
 .logo {
   flex-shrink: 0;
   color: var(--color-ink);
-  font-size: 1.15rem;
-  font-weight: 850;
+  font-size: 1.7rem;
+  font-weight: 1000;
   letter-spacing: -0.045em;
   text-decoration: none;
 }

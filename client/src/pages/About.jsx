@@ -14,7 +14,7 @@ function About() {
             <h2>Hello! I'm Sampada Kaginkar.</h2>
 
             <p>
-              I'm an IT Engineering student interested in software development and the process of turning ideas into working solutions.
+              IT Engineering student interested in software development and the process of turning ideas into working solutions.
             </p>
 
             <p>

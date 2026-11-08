@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -47,6 +47,13 @@ function AppRoutes() {
         ? "light"
         : "dark",
   );
+
+  useLayoutEffect(() => {
+    window.history.scrollRestoration = "manual";
+    if (window.location.pathname === "/" && !window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

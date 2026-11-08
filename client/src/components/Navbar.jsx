@@ -26,7 +26,7 @@ function Navbar({ theme, onToggleTheme }) {
         className="logo"
         onClick={() => setMenuOpen(false)}
       >
-        MyPortfolio
+        𝕊𝕊𝕂
       </Link>
 
       <div className="navbar-actions">
