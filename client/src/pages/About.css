@@ -2,7 +2,7 @@
   min-height: 80vh;
   padding: clamp(52px, 8vw, 88px) 24px;
   background:
-    radial-gradient(ellipse at 92% 10%, rgb(217 244 223 / 70%), transparent 34rem),
+    radial-gradient(ellipse at 92% 10%, color-mix(in srgb, var(--color-orange) 9%, transparent), transparent 34rem),
     var(--color-page);
   color: var(--color-ink);
 }
@@ -75,7 +75,7 @@
   padding: 11px 18px;
   border-radius: 10px;
   background: var(--color-green);
-  color: #fff;
+  color: var(--color-page);
   font-weight: 700;
   text-decoration: none;
   transition:
@@ -102,8 +102,8 @@
   padding: 21px 23px;
   border: 1px solid var(--color-border);
   border-radius: 15px;
-  background: linear-gradient(135deg, #fff, #f8fcf8);
-  box-shadow: 0 10px 24px rgb(25 74 42 / 5%);
+  background: linear-gradient(135deg, var(--color-surface), var(--color-page));
+  box-shadow: 0 10px 24px rgb(0 0 0 / 22%);
 }
 
 .detail-card h3 {

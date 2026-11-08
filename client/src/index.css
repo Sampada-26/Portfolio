@@ -1,23 +1,41 @@
 :root {
   font-family: Inter, "Segoe UI", Arial, sans-serif;
-  color: #17231b;
-  background: #f5faf5;
+  color-scheme: dark;
+  color: #f6f3ef;
+  background: #080808;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --color-page: #f5faf5;
-  --color-mint: #d9f4df;
-  --color-mint-light: #edf8ef;
-  --color-green: #22ad60;
-  --color-green-dark: #147843;
-  --color-orange: #ff7547;
-  --color-ink: #17231b;
-  --color-muted: #52635a;
-  --color-border: #dce9df;
+  --color-page: #080808;
+  --color-mint: #201208;
+  --color-mint-light: #25170d;
+  --color-green: #ff7a1a;
+  --color-green-dark: #ff9a4a;
+  --color-orange: #ff7a1a;
+  --color-ink: #f6f3ef;
+  --color-muted: #aaa5a0;
+  --color-border: #34302c;
+  --color-surface: #141312;
+  --shadow-card: 0 18px 42px rgb(0 0 0 / 32%);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  color: #1d2735;
+  background: #f7f5f0;
+  --color-page: #f7f5f0;
+  --color-mint: #e9edf4;
+  --color-mint-light: #edf1f8;
+  --color-green: #315d9b;
+  --color-green-dark: #254c84;
+  --color-orange: #315d9b;
+  --color-ink: #1d2735;
+  --color-muted: #5d6776;
+  --color-border: #d9dce2;
   --color-surface: #ffffff;
-  --shadow-card: 0 16px 38px rgb(25 74 42 / 8%);
+  --shadow-card: 0 18px 42px rgb(25 36 62 / 9%);
 }
 
 * {
@@ -25,12 +43,13 @@
 }
 
 html {
-  min-width: 320px;
+  min-width: 0;
   scroll-behavior: smooth;
+  scroll-padding-top: 82px;
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   min-height: 100vh;
   margin: 0;
   background: var(--color-page);
@@ -54,7 +73,7 @@ main {
 footer {
   padding: 22px 24px;
   border-top: 1px solid var(--color-border);
-  background: #fbfefb;
+  background: var(--color-surface);
   color: var(--color-muted);
   text-align: center;
   font-size: 0.9rem;
@@ -65,6 +84,16 @@ footer p {
 }
 
 ::selection {
-  background: #bce9c8;
-  color: var(--color-ink);
+  background: var(--color-orange);
+  color: var(--color-page);
+}
+
+.portfolio-page,
+.standalone-page {
+  min-height: 80vh;
+  background: var(--color-page);
+}
+
+.portfolio-page > section[id] {
+  scroll-margin-top: 76px;
 }

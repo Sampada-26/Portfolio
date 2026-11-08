@@ -51,7 +51,7 @@ function Contact() {
   };
 
   return (
-    <main className="contact-page">
+    <section className="contact-page" id="contact">
       <section className="contact-container">
         <header className="contact-heading">
           <p className="contact-subtitle">GET IN TOUCH</p>
@@ -91,7 +91,7 @@ function Contact() {
               </span>
               <span>
                 <small>Location</small>
-                <strong>India</strong>
+                <strong>Thane , India</strong>
               </span>
             </div>
 
@@ -196,7 +196,7 @@ function Contact() {
           </section>
         </div>
       </section>
-    </main>
+    </section>
   );
 }
 

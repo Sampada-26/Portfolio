@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Skills.css";
 
 import {
@@ -25,56 +26,73 @@ const skillCategories = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "C++", icon: SiCplusplus },
-      { name: "C", icon: SiC },
-      { name: "Java", icon: SiOpenjdk },
-      { name: "Python", icon: SiPython },
+      { name: "C++", icon: SiCplusplus, color: "#659ad2" },
+      { name: "C", icon: SiC, color: "#a8b9cc" },
+      { name: "Java", icon: SiOpenjdk, color: "#ed8b00" },
+      { name: "Python", icon: SiPython, color: "#3776ab" },
     ],
   },
   {
     title: "Frontend Development",
     skills: [
-      { name: "React", icon: SiReact },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "Bootstrap", icon: SiBootstrap },
-      { name: "Vite", icon: SiVite },
+      { name: "React", icon: SiReact, color: "#61dafb" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06b6d4" },
+      { name: "Bootstrap", icon: SiBootstrap, color: "#a98bff" },
+      { name: "Vite", icon: SiVite, color: "#a58bff" },
     ],
   },
   {
     title: "Backend Development",
     skills: [
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "Django", icon: SiDjango },
+      { name: "Node.js", icon: SiNodedotjs, color: "#83cd29" },
+      { name: "Django", icon: SiDjango, color: "#44b78b" },
     ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "MySQL", icon: SiMysql },
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql, color: "#5f9ec4" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#6995e6" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47a248" },
     ],
   },
   {
     title: "Tools & Technologies",
     skills: [
-      { name: "Git", icon: SiGit },
-      { name: "GitHub", icon: SiGithub },
-      { name: "Linux", icon: SiLinux },
+      { name: "Git", icon: SiGit, color: "#f05032" },
+      { name: "GitHub", icon: SiGithub, color: "#f0f0f0" },
+      { name: "Linux", icon: SiLinux, color: "#fcc624" },
     ],
   },
   {
     title: "DevOps",
     skills: [
-      { name: "Docker", icon: SiDocker },
-      { name: "Kubernetes", icon: SiKubernetes },
+      { name: "Docker", icon: SiDocker, color: "#2496ed" },
+      { name: "Kubernetes", icon: SiKubernetes, color: "#6d9cff" },
     ],
   },
 ];
 
 function Skills() {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedSkill, setSelectedSkill] = useState("React");
+  const categories = ["All", ...skillCategories.map(({ title }) => title)];
+  const visibleCategories =
+    activeCategory === "All"
+      ? skillCategories
+      : skillCategories.filter(({ title }) => title === activeCategory);
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    if (category !== "All") {
+      const firstSkill = skillCategories.find(
+        (skillCategory) => skillCategory.title === category,
+      ).skills[0];
+      setSelectedSkill(firstSkill.name);
+    }
+  };
+
   return (
-    <main className="skills-page">
+    <section className="skills-page" id="skills">
       <section className="skills-container">
         <div className="skills-heading">
           <p className="skills-subtitle">WHAT I WORK WITH</p>
@@ -87,8 +105,26 @@ function Skills() {
           </p>
         </div>
 
+        <div
+          className="skill-category-filters"
+          role="group"
+          aria-label="Filter skills by category"
+        >
+          {categories.map((category) => (
+            <button
+              className={`skill-category-filter${activeCategory === category ? " active" : ""}`}
+              type="button"
+              key={category}
+              aria-pressed={activeCategory === category}
+              onClick={() => handleCategoryChange(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="skills-grid">
-          {skillCategories.map((category) => (
+          {visibleCategories.map((category) => (
             <article className="skill-card" key={category.title}>
               <h2>{category.title}</h2>
 
@@ -97,18 +133,29 @@ function Skills() {
                   const Icon = skill.icon;
 
                   return (
-                    <div className="skill-item" key={skill.name}>
-                      <Icon className="skill-icon" aria-hidden="true" />
+                    <button
+                      className={`skill-item${selectedSkill === skill.name ? " selected" : ""}`}
+                      key={skill.name}
+                      type="button"
+                      aria-pressed={selectedSkill === skill.name}
+                      onClick={() => setSelectedSkill(skill.name)}
+                    >
+                      <Icon
+                        className="skill-icon"
+                        aria-hidden="true"
+                        style={{ color: skill.color }}
+                      />
                       <span>{skill.name}</span>
-                    </div>
+                    </button>
                   );
                 })}
               </div>
             </article>
           ))}
         </div>
+
       </section>
-    </main>
+    </section>
   );
 }
 

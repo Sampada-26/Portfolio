@@ -2,7 +2,7 @@
   min-height: 80vh;
   padding: clamp(52px, 8vw, 88px) 24px;
   background:
-    radial-gradient(ellipse at 92% 10%, rgb(217 244 223 / 70%), transparent 34rem),
+    radial-gradient(ellipse at 92% 10%, color-mix(in srgb, var(--color-orange) 8%, transparent), transparent 34rem),
     var(--color-page);
   color: var(--color-ink);
 }
@@ -104,7 +104,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: 1px solid #d6efdc;
+  border: 1px solid color-mix(in srgb, var(--color-orange) 24%, transparent);
   border-radius: 12px;
   background: var(--color-mint-light);
   color: var(--color-green-dark);
@@ -118,13 +118,13 @@
 
 .contact-info-item small {
   margin-bottom: 4px;
-  color: #708075;
+  color: var(--color-muted);
   font-size: 0.8rem;
 }
 
 .contact-info-item strong {
   overflow-wrap: anywhere;
-  color: #293a2f;
+  color: var(--color-ink);
   font-size: 0.9rem;
   font-weight: 650;
 }
@@ -132,12 +132,12 @@
 .contact-socials {
   margin-top: 28px;
   padding-top: 22px;
-  border-top: 1px solid #e7efe8;
+  border-top: 1px solid var(--color-border);
 }
 
 .contact-socials h3 {
   margin: 0 0 14px;
-  color: #293a2f;
+  color: var(--color-ink);
   font-size: 0.96rem;
 }
 
@@ -148,10 +148,10 @@
   width: 42px;
   height: 42px;
   margin-right: 10px;
-  border: 1px solid #dce9df;
+  border: 1px solid var(--color-border);
   border-radius: 11px;
-  background: #f7fbf7;
-  color: var(--color-green-dark);
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-page));
+  color: var(--color-orange);
   font-size: 1.17rem;
   text-decoration: none;
   transition:
@@ -161,7 +161,7 @@
 
 .contact-socials a:hover {
   transform: translateY(-2px);
-  background: var(--color-mint);
+  background: color-mix(in srgb, var(--color-orange) 12%, var(--color-surface));
 }
 
 .contact-form-row {
@@ -178,7 +178,7 @@
 }
 
 .contact-field label {
-  color: #35463a;
+  color: var(--color-ink);
   font-size: 0.88rem;
   font-weight: 650;
 }
@@ -188,10 +188,10 @@
   width: 100%;
   min-width: 0;
   padding: 12px 13px;
-  border: 1px solid #d5e2d8;
+  border: 1px solid var(--color-border);
   border-radius: 9px;
   outline: none;
-  background: #fbfdfb;
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-page));
   color: var(--color-ink);
   font: inherit;
   font-size: 0.9rem;
@@ -202,13 +202,13 @@
 
 .contact-field input::placeholder,
 .contact-field textarea::placeholder {
-  color: #89978d;
+  color: var(--color-muted);
 }
 
 .contact-field input:focus,
 .contact-field textarea:focus {
   border-color: var(--color-green);
-  box-shadow: 0 0 0 3px rgb(34 173 96 / 12%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-orange) 12%, transparent);
 }
 
 .contact-field textarea {
@@ -225,8 +225,8 @@
   padding: 13px 18px;
   border: 0;
   border-radius: 9px;
-  background: var(--color-green);
-  color: #fff;
+  background: var(--color-orange);
+  color: var(--color-page);
   font-size: 0.94rem;
   font-weight: 700;
   cursor: pointer;
@@ -242,7 +242,7 @@
 
 .contact-submit-btn:focus-visible,
 .contact-socials a:focus-visible {
-  outline: 2px solid var(--color-green-dark);
+  outline: 2px solid var(--color-orange);
   outline-offset: 4px;
 }
 
@@ -251,7 +251,7 @@
   align-items: flex-start;
   gap: 9px;
   margin: 15px 0 0;
-  color: var(--color-green-dark);
+  color: var(--color-orange);
   font-size: 0.88rem;
   line-height: 1.6;
 }

@@ -1,18 +1,21 @@
 
+import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 import "./Education.css";
 
 function Education() {
+  const [expandedEducation, setExpandedEducation] = useState(0);
   const educationData = [
     {
       degree: "Bachelor of Engineering (B.E.)",
-      field: "Computer Engineering",
+      field: "IT Engineering",
       institution: "Don Bosco Institute of Technology ( DBIT ) ",
       period: "2023 – 2027",
       score: "CGPA: 8.5",
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
-      field: "Science",
+      field: "Science -  PCM ",
       institution: "Adarsh Vidya Mandir Junior College ",
       period: "2021 – 2023",
       score: "Percentage: 89%",
@@ -27,39 +30,47 @@ function Education() {
   ];
 
   return (
-    <section className="education-page">
+    <section className="education-page" id="education">
       <div className="education-container">
-        <p className="education-label">MY ACADEMIC JOURNEY</p>
+        <p className="education-label">Education</p>
 
-        <h1>Education</h1>
-
-        <p className="education-intro">
-          My educational journey has helped me build a strong foundation
-          in technology, logical thinking, and problem-solving.
-        </p>
+        <h1>Throughout my academic journey</h1>
 
         <div className="education-timeline">
           {educationData.map((item, index) => (
-            <article className="education-card" key={item.degree}>
-              <div className="timeline-marker">{index + 1}</div>
+            <article
+              className={`education-card${expandedEducation === index ? " expanded" : ""}`}
+              key={item.degree}
+            >
+              <button
+                className="education-card-toggle"
+                type="button"
+                aria-expanded={expandedEducation === index}
+                aria-controls={`education-details-${index}`}
+                onClick={() =>
+                  setExpandedEducation((current) =>
+                    current === index ? null : index,
+                  )
+                }
+              >
+                <span className="timeline-marker">{index + 1}</span>
+                <span className="education-card-heading">
+                  <span className="education-period">{item.period}</span>
+                  <span className="education-degree">{item.degree}</span>
+                  <span className="education-field">{item.field}</span>
+                  <span className="education-score">{item.score}</span>
+                </span>
+                <FaChevronDown className="education-chevron" aria-hidden="true" />
+              </button>
 
-              <div className="education-card-content">
-                <span className="education-period">{item.period}</span>
-
-                <h2>{item.degree}</h2>
-
-                <h3>{item.field}</h3>
-
-                <p className="education-institution">
-                  {item.institution}
-                </p>
-
-                <p className="education-description">
-                  {item.description}
-                </p>
-
-                <span className="education-score">{item.score}</span>
-              </div>
+              {expandedEducation === index && (
+                <div
+                  className="education-card-details"
+                  id={`education-details-${index}`}
+                >
+                  <p className="education-institution">{item.institution}</p>
+                </div>
+              )}
             </article>
           ))}
         </div>

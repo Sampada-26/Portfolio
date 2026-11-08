@@ -2,7 +2,7 @@
   min-height: 80vh;
   padding: clamp(52px, 8vw, 88px) 24px;
   background:
-    radial-gradient(ellipse at 92% 10%, rgb(217 244 223 / 70%), transparent 34rem),
+    radial-gradient(ellipse at 92% 10%, color-mix(in srgb, var(--color-orange) 8%, transparent), transparent 34rem),
     var(--color-page);
   color: var(--color-ink);
 }
@@ -64,7 +64,7 @@
 
 .experience-card:hover {
   transform: translateY(-3px);
-  border-color: #a4d8b2;
+  border-color: color-mix(in srgb, var(--color-orange) 42%, var(--color-border));
 }
 
 .experience-header {
@@ -78,7 +78,7 @@
 .experience-type {
   display: inline-block;
   padding: 6px 11px;
-  border: 1px solid #d6efdc;
+  border: 1px solid color-mix(in srgb, var(--color-orange) 24%, transparent);
   border-radius: 999px;
   background: var(--color-mint-light);
   color: var(--color-green-dark);

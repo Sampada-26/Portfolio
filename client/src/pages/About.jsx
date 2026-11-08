@@ -3,7 +3,7 @@ import "./About.css";
 
 function About() {
   return (
-    <section className="about-page">
+    <section className="about-page" id="about">
       <div className="about-container">
         <p className="section-label">GET TO KNOW ME</p>
 
@@ -14,22 +14,15 @@ function About() {
             <h2>Hello! I'm Sampada Kaginkar.</h2>
 
             <p>
-              I am a Computer Engineering student passionate about
-              software development, web technologies, and problem-solving.
-              I enjoy exploring new technologies and building projects
-              that help me develop practical skills.
+              I'm an IT Engineering student interested in software development and the process of turning ideas into working solutions.
             </p>
 
             <p>
-              My interests include full-stack development, programming,
-              database management, and creating user-friendly web
-              applications. I am continuously learning and improving
-              my technical knowledge.
+              I enjoy working with different technologies, exploring how things work behind the scenes, and building projects that challenge me to think, learn, and improve. From developing web applications to solving programming problems, I'm always looking for opportunities to put my knowledge into practice.
             </p>
 
             <p>
-              My goal is to become a skilled software developer and
-              contribute to meaningful technology projects.
+              I'm currently expanding my skills in software development, backend technologies, and problem-solving, with the goal of building reliable, useful, and well-designed software.
             </p>
 
             <a
@@ -45,7 +38,7 @@ function About() {
           <div className="about-details">
             <div className="detail-card">
               <h3>Education</h3>
-              <p>Computer Engineering</p>
+              <p>IT Engineering</p>
             </div>
 
             <div className="detail-card">
@@ -55,7 +48,7 @@ function About() {
 
             <div className="detail-card">
               <h3>Currently Learning</h3>
-              <p>MERN Stack Development</p>
+              <p>AI - ML </p>
             </div>
           </div>
         </div>

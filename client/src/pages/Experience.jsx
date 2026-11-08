@@ -19,7 +19,7 @@ function Experience() {
   ];
 
   return (
-    <section className="experience-page">
+    <section className="experience-page" id="experience">
       <div className="experience-container">
         <p className="experience-label">MY PROFESSIONAL JOURNEY</p>
 
